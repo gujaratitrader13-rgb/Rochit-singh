@@ -3,164 +3,211 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rochit Singh Stocks</title>
+    <title>Rochit Singh Stocks - Community Link</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
-            background-color: #0b0e14;
+            background-color: #0c0e15; /* Matching dark background */
             color: #ffffff;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 20px 15px;
+            padding: 15px; /* Side padding for mobile */
         }
 
         .card-container {
             width: 100%;
-            max-width: 380px;
-            background-color: #0b0e14;
-            border-radius: 16px;
-            padding: 25px 20px;
+            max-width: 375px; /* Maximum width on phone */
+            background-color: #12161e; /* Darker card shade */
+            border-radius: 20px;
+            padding: 30px 20px;
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
-            border: 1px solid #1a202c;
-        }
-
-        .profile-section {
+            border: 1px solid #1a202c; /* Subtly defined border */
+            overflow: hidden;
             position: relative;
-            margin-bottom: 20px;
         }
 
+        /* Profile image alignment - centered with slight upward float on hover/active */
         .profile-img-container {
-            width: 100px;
-            height: 100px;
+            width: 105px;
+            height: 105px;
             border-radius: 50%;
-            padding: 3px;
-            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            border: 2.5px solid #2d3748; /* Ring border */
+            margin-bottom: 18px;
+            overflow: hidden;
+            background-color: #1a202c;
             display: flex;
             justify-content: center;
             align-items: center;
+            /* Placeholder for profile image - user must change this src */
+            transition: transform 0.3s ease;
         }
 
-        .profile-img {
+        .profile-img-container img {
             width: 100%;
             height: 100%;
-            border-radius: 50%;
             object-fit: cover;
         }
 
+        /* Center category badge */
         .category-badge {
             background-color: #1a2318;
             color: #22c55e;
             font-size: 11px;
-            font-weight: 600;
-            padding: 4px 12px;
-            border-radius: 12px;
+            font-weight: 700;
+            padding: 5px 14px;
+            border-radius: 15px;
             border: 1px solid #22c55e33;
-            margin-bottom: 15px;
+            margin-bottom: 16px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
+        /* Title text - correct color/placement */
         .main-title {
-            font-size: 22px;
+            font-size: 24px;
             font-weight: 800;
-            color: #e2e8f0;
+            color: #f7fafc; /* Lighter than white */
             letter-spacing: 1px;
             line-height: 1.2;
-            margin-bottom: 20px;
+            margin-bottom: 22px;
+            white-space: nowrap; /* Prevents text from breaking */
         }
 
         .main-title span {
-            color: #fbbf24;
+            color: #fbbf24; /* Title text highlight */
         }
 
+        /* List items - perfectly centered text */
         .features-list {
             display: flex;
             flex-direction: column;
-            gap: 8px;
-            margin-bottom: 25px;
+            gap: 10px;
+            margin-bottom: 30px;
             width: 100%;
         }
 
         .feature-item {
             font-size: 13px;
-            color: #cbd5e1;
+            color: #e2e8f0; /* Lighter white for text */
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 6px;
+            gap: 7px;
+            text-align: left;
+            width: fit-content;
+            margin: 0 auto;
         }
 
+        /* Stats container */
         .stats-container {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 18px;
             width: 100%;
-            margin-bottom: 25px;
+            margin-bottom: 32px;
         }
 
         .stat-box {
             background-color: #161b22;
-            padding: 10px 18px;
-            border-radius: 8px;
-            min-width: 90px;
+            padding: 12px 20px;
+            border-radius: 12px;
+            flex: 1; /* Equal width distribution */
             border: 1px solid #2d3748;
         }
 
         .stat-number {
-            font-size: 15px;
+            font-size: 16px;
             font-weight: bold;
-            color: #e2e8f0;
+            color: #f6ad55; /* Warm gold for stats */
+            margin-bottom: 2px;
         }
 
         .stat-label {
             font-size: 11px;
-            color: #a0aec0;
-            margin-top: 2px;
+            color: #cbd5e1;
         }
 
+        /* Glowing Join Telegram Button */
         .join-btn {
             width: 100%;
-            background: linear-gradient(185deg, #f59e0b 0%, #d97706 100%);
-            color: #ffffff;
-            font-size: 15px;
+            background: linear-gradient(135deg, #fbb03b 0%, #ec9a1e 100%); /* Telegram yellow */
+            color: #12161e;
+            font-size: 16px;
             font-weight: 700;
-            padding: 14px 20px;
-            border-radius: 30px;
+            padding: 16px 20px;
+            border-radius: 35px;
             text-decoration: none;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
-            box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3);
+            gap: 10px;
+            position: relative;
+            overflow: hidden;
             margin-bottom: 20px;
-            transition: transform 0.2s;
+            box-shadow: 0 4px 15px rgba(246, 173, 85, 0.2);
+            /* Glowing animation setup */
+            animation: pulseGlow 1.8s infinite ease-in-out;
+            transition: background 0.3s;
         }
 
-        .join-btn:active {
-            transform: scale(0.98);
+        /* Glowing animation keyframes */
+        @keyframes pulseGlow {
+            0% {
+                box-shadow: 0 0 10px rgba(246, 173, 85, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 25px rgba(246, 173, 85, 0.7);
+            }
+            100% {
+                box-shadow: 0 0 10px rgba(246, 173, 85, 0.3);
+            }
         }
 
+        /* Background light beam animation */
+        .join-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                to right,
+                transparent 0%,
+                rgba(255, 255, 255, 0.3) 50%,
+                transparent 100%
+            );
+            animation: shine 3s infinite linear;
+        }
+
+        @keyframes shine {
+            to {
+                left: 100%;
+            }
+        }
+
+        /* Subtitle texts */
         .footer-text {
             font-size: 11px;
             color: #718096;
-            line-height: 1.5;
+            margin-bottom: 6px;
         }
 
-        .ad-credits {
-            font-size: 10px;
-            color: #e2e8f0;
-            margin-top: 10px;
+        .credits {
+            font-size: 11px;
+            color: #718096;
+            margin-top: 4px;
         }
     </style>
 </head>
@@ -168,25 +215,22 @@
 
     <div class="card-container">
         
-        <!-- Profile Image -->
-        <div class="profile-section">
-            <div class="profile-img-container">
-                <!-- Change photo URL here -->
-                <img src="https://via.placeholder.com/100" alt="Profile" class="profile-img">
-            </div>
+        <!-- Profile Image - Update src with actual photo URL -->
+        <div class="profile-img-container">
+            <img src="https://via.placeholder.com/100" alt="Rochit Singh">
         </div>
 
-        <!-- Category Badge -->
+        <!-- Category -->
         <div class="category-badge">
             📊 STOCK MARKET COMMUNITY
         </div>
 
         <!-- Title -->
         <h1 class="main-title">
-            👑 ROCHIT SINGH<br>STOCKS
+            👑 ROCHIT SINGH STOCKS
         </h1>
 
-        <!-- Features -->
+        <!-- List Items -->
         <div class="features-list">
             <div class="feature-item">📊 NIFTY & BANKNIFTY Analysis</div>
             <div class="feature-item">🎯 Price Action Learning</div>
@@ -194,7 +238,7 @@
             <div class="feature-item">🛡️ Risk Management Concepts</div>
         </div>
 
-        <!-- Stats -->
+        <!-- Stats Boxes -->
         <div class="stats-container">
             <div class="stat-box">
                 <div class="stat-number">26K+</div>
@@ -206,18 +250,16 @@
             </div>
         </div>
 
-        <!-- Telegram Button -->
+        <!-- Glowing Join Button -->
         <a href="#" class="join-btn">
             🚀 Join Telegram Community
         </a>
 
-        <!-- Footer -->
+        <!-- Footer Text -->
         <div class="footer-text">
-            Free Access • Educational Content • Beginner Friendly<br>
-            <span style="font-size: 10px; color: #4a5568;">For Educational Purposes Only. Trading Involves Risk.</span>
+            Free Access • Educational Content • Beginner Friendly
         </div>
-
-        <div class="ad-credits">
+        <div class="credits">
             🚀 Ads Managed By Digital Growth Zone
         </div>
 
