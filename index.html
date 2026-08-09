@@ -3,146 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rochit Singh Stocks - Community Link</title>
+    <title>Rochit Singh Stocks | Trader Community</title>
+    
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1414345446371357'); 
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1414345446371357&ev=PageView&noscript=1"
+    /></noscript>
+    
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
-            background-color: #0c0e15; /* Matching dark background */
+            background-color: #0c0e12;
             color: #ffffff;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 15px; /* Side padding for mobile */
+            padding: 20px;
         }
 
         .card-container {
             width: 100%;
-            max-width: 375px; /* Maximum width on phone */
-            background-color: #12161e; /* Darker card shade */
+            max-width: 380px;
+            background-color: #11151c;
             border-radius: 20px;
-            padding: 30px 20px;
+            padding: 25px 20px;
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
-            border: 1px solid #1a202c; /* Subtly defined border */
-            overflow: hidden;
-            position: relative;
+            border: 1px solid #1c212b;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
         }
 
-        /* Profile image alignment - centered with slight upward float on hover/active */
+        /* Profile Image with subtle shake animation */
         .profile-img-container {
-            width: 105px;
-            height: 105px;
+            width: 110px;
+            height: 110px;
             border-radius: 50%;
-            border: 2.5px solid #2d3748; /* Ring border */
-            margin-bottom: 18px;
-            overflow: hidden;
-            background-color: #1a202c;
+            padding: 3px;
+            background: linear-gradient(135deg, #f59e0b, #d97706);
             display: flex;
             justify-content: center;
             align-items: center;
-            /* Placeholder for profile image - user must change this src */
-            transition: transform 0.3s ease;
+            margin-bottom: 15px;
+            /* Shaking animation setup */
+            animation: subtleShake 4s ease-in-out infinite;
         }
 
-        .profile-img-container img {
+        @keyframes subtleShake {
+            0%, 100% { transform: translateX(0); }
+            5%, 15%, 25% { transform: translateX(-1.5px); }
+            10%, 20%, 30% { transform: translateX(1.5px); }
+            35% { transform: translateX(0); }
+        }
+
+        .profile-img {
             width: 100%;
             height: 100%;
+            border-radius: 50%;
             object-fit: cover;
         }
 
-        /* Center category badge */
         .category-badge {
             background-color: #1a2318;
             color: #22c55e;
             font-size: 11px;
             font-weight: 700;
-            padding: 5px 14px;
-            border-radius: 15px;
+            padding: 6px 14px;
+            border-radius: 20px;
             border: 1px solid #22c55e33;
-            margin-bottom: 16px;
+            margin-bottom: 15px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
-        /* Title text - correct color/placement */
         .main-title {
             font-size: 24px;
             font-weight: 800;
-            color: #f7fafc; /* Lighter than white */
+            color: #f7fafc;
             letter-spacing: 1px;
             line-height: 1.2;
             margin-bottom: 22px;
-            white-space: nowrap; /* Prevents text from breaking */
         }
 
         .main-title span {
-            color: #fbbf24; /* Title text highlight */
+            color: #fbbf24;
         }
 
-        /* List items - perfectly centered text */
         .features-list {
             display: flex;
             flex-direction: column;
             gap: 10px;
-            margin-bottom: 30px;
+            margin-bottom: 28px;
             width: 100%;
         }
 
         .feature-item {
             font-size: 13px;
-            color: #e2e8f0; /* Lighter white for text */
+            color: #cbd5e1;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 7px;
-            text-align: left;
-            width: fit-content;
-            margin: 0 auto;
         }
 
-        /* Stats container */
         .stats-container {
             display: flex;
             justify-content: center;
-            gap: 18px;
+            gap: 15px;
             width: 100%;
-            margin-bottom: 32px;
+            margin-bottom: 28px;
         }
 
         .stat-box {
             background-color: #161b22;
-            padding: 12px 20px;
+            padding: 10px 18px;
             border-radius: 12px;
-            flex: 1; /* Equal width distribution */
+            min-width: 90px;
             border: 1px solid #2d3748;
         }
 
         .stat-number {
             font-size: 16px;
             font-weight: bold;
-            color: #f6ad55; /* Warm gold for stats */
-            margin-bottom: 2px;
+            color: #e2e8f0;
         }
 
         .stat-label {
             font-size: 11px;
-            color: #cbd5e1;
+            color: #a0aec0;
+            margin-top: 2px;
         }
 
-        /* Glowing Join Telegram Button */
+        /* Continuous Glowing Join Telegram Button */
         .join-btn {
             width: 100%;
-            background: linear-gradient(135deg, #fbb03b 0%, #ec9a1e 100%); /* Telegram yellow */
-            color: #12161e;
+            background: linear-gradient(185deg, #fbb03b 0%, #ec9a1e 100%);
+            color: #11151c;
             font-size: 16px;
             font-weight: 700;
             padding: 16px 20px;
@@ -152,62 +168,39 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
+            margin-bottom: 20px;
             position: relative;
             overflow: hidden;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 15px rgba(246, 173, 85, 0.2);
             /* Glowing animation setup */
-            animation: pulseGlow 1.8s infinite ease-in-out;
-            transition: background 0.3s;
+            animation: continuousGlow 2s infinite ease-in-out;
+            transition: all 0.3s;
         }
 
-        /* Glowing animation keyframes */
-        @keyframes pulseGlow {
+        @keyframes continuousGlow {
             0% {
+                transform: scale(1);
                 box-shadow: 0 0 10px rgba(246, 173, 85, 0.3);
             }
             50% {
-                box-shadow: 0 0 25px rgba(246, 173, 85, 0.7);
+                transform: scale(1.02);
+                box-shadow: 0 0 25px rgba(246, 173, 85, 0.8);
             }
             100% {
+                transform: scale(1);
                 box-shadow: 0 0 10px rgba(246, 173, 85, 0.3);
             }
         }
 
-        /* Background light beam animation */
-        .join-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(
-                to right,
-                transparent 0%,
-                rgba(255, 255, 255, 0.3) 50%,
-                transparent 100%
-            );
-            animation: shine 3s infinite linear;
-        }
-
-        @keyframes shine {
-            to {
-                left: 100%;
-            }
-        }
-
-        /* Subtitle texts */
         .footer-text {
             font-size: 11px;
             color: #718096;
-            margin-bottom: 6px;
+            line-height: 1.5;
         }
 
-        .credits {
+        .ad-credits {
             font-size: 11px;
             color: #718096;
-            margin-top: 4px;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -215,9 +208,9 @@
 
     <div class="card-container">
         
-        <!-- Profile Image - Update src with actual photo URL -->
+        <!-- Animated Shaking Logo - Update src with actual photo URL -->
         <div class="profile-img-container">
-            <img src="https://via.placeholder.com/100" alt="Rochit Singh">
+            <img src="https://via.placeholder.com/110" alt="Rochit Singh Stocks" class="profile-img">
         </div>
 
         <!-- Category -->
@@ -227,10 +220,10 @@
 
         <!-- Title -->
         <h1 class="main-title">
-            👑 ROCHIT SINGH STOCKS
+            👑 ROCHIT SINGH<br>STOCKS
         </h1>
 
-        <!-- List Items -->
+        <!-- Features -->
         <div class="features-list">
             <div class="feature-item">📊 NIFTY & BANKNIFTY Analysis</div>
             <div class="feature-item">🎯 Price Action Learning</div>
@@ -238,7 +231,7 @@
             <div class="feature-item">🛡️ Risk Management Concepts</div>
         </div>
 
-        <!-- Stats Boxes -->
+        <!-- Stats Section -->
         <div class="stats-container">
             <div class="stat-box">
                 <div class="stat-number">26K+</div>
@@ -250,16 +243,17 @@
             </div>
         </div>
 
-        <!-- Glowing Join Button -->
-        <a href="#" class="join-btn">
+        <!-- Continuous Glowing Join Button -->
+        <a href="https://t.me/+9-L5Rq3oSUFmZTI5" class="join-btn" onclick="fbq('track', 'Contact');">
             🚀 Join Telegram Community
         </a>
 
-        <!-- Footer Text -->
+        <!-- Footer -->
         <div class="footer-text">
             Free Access • Educational Content • Beginner Friendly
         </div>
-        <div class="credits">
+
+        <div class="ad-credits">
             🚀 Ads Managed By Digital Growth Zone
         </div>
 
